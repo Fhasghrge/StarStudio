@@ -1,0 +1,115 @@
+body {
+    background: url('../../images/page1bg.png') no-repeat 0px 0px;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0px;
+    margin: 0px;
+}
+
+body>h1 {
+    font-family: Montserrat-ExtraLight;
+    font-size: 62px;
+    line-height: 72px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 10%;
+}
+
+body>p {
+    margin: 1px auto;
+    width: 766px;
+    height: 84px;
+    font-family: Montserrat-ExtraLight;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 0.7;
+    text-align: center;
+}
+
+.signIn {
+    width: 1270px;
+    height: 350px;
+    border-radius: 2px;
+    border: solid 1px #ffffff;
+    border: 1px solid rgb(156, 149, 149);
+    margin: 150px auto;
+}
+
+.signIn>h3 {
+    width: 351px;
+    font-family: Montserrat-Light;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 4px;
+    color: #ffffff;
+    margin: 80px auto 20px;
+}
+
+.signIn>p {
+    width: 240px;
+    height: 15px;
+    font-family: Montserrat-Light;
+    font-size: 16x;
+    letter-spacing: 2px;
+    color: #ffffff;
+    opacity: 0.3;
+    margin: 0px auto 40px;
+}
+
+.signInButtons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+}
+
+.signInButtons>input {
+    width: 392px;
+    height: 70px;
+    border-radius: 2px;
+    border: solid 1px #ffffff;
+    margin-left: 60px;
+    background: transparent;
+    color: white;
+}
+
+.signInButtons>button {
+    width: 195px;
+    height: 73px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color:white;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color:white;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color:white;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color:white;
+    font-size: 20px;
+    text-align: center;
+
+}

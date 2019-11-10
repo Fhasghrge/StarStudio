@@ -1,0 +1,57 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body>p {
+    margin: 130px auto 0px;
+    width: 363px;
+    font-family: Montserrat-Light;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+h1 {
+    width: 757px;
+    font-family: Montserrat-ExtraLight;
+    font-size: 42px;
+    font-weight: normal;
+    text-align: center;
+    margin: 50px auto 50px;
+}
+
+.tubiao {
+    width: 47px;
+    height: 64px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.title {
+    width: 309px;
+    margin: 0;
+    font-family: Montserrat-Light;
+    font-size: 25px;
+}
+
+.content {
+    width: 521px;
+    font-family: Montserrat-ExtraLight;
+    font-size: 23px;
+    opacity: 0.7;
+}
+
+.moKuai {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    width: 1300px;
+    margin: 180px auto;
+}
+
+.moKuai>div {
+    width: 646px;
+    display: flex;
+    flex-direction: row;
+}
