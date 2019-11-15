@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>微博</title>
+        <link rel="stylesheet" href="index.css" />
+        <link
+            rel="shortcut icon"
+            href="../images/weibo.png"
+            type="image/x-icon"
+        />
+        <script src="../js/vue.js"></script>
+        <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="daohang">
+                <div>
+                    <img src="../images/touxiang.png" alt="主页" />
+                </div>
+                <div id="reSou">
+                    <input type="text" :placeholder="resou" />
+                </div>
+                <div>
+                    <img src="../images/xiaoxi.png" alt="消息" />
+                </div>
+                <div>
+                    <img src="../images/xieweibo.png" alt="写微博" />
+                </div>
+            </div>
+            <nav class="classes" id="classesId">
+                <div class="fenlei" v-for="(item,index) of list" :key="index">
+                    <a href="">{{item.text}}</a>
+                </div>
+            </nav>
+        </header>
+
+        <div class="mainContents" id="mainContent">
+            <article v-for = "(item,index) of weiboLists" :key = "index">
+                <header>
+                    <img src="../images/touxiang.jpg" alt="头像" />
+                    <div>
+                        <div class="name">{{item.author_name}}</div>
+                        <!-- <img src="" alt="会员图标" /> -->
+                        <div class="time">{{item.date}}</div>
+                        <!-- <div class="device"></div> -->
+                    </div>
+                </header>
+                <p>{{item.title}}</p>
+                <div class="photos">
+                    <img :src="item.thumbnail_pic_s" alt="微博图片" />
+                </div>
+                <footer>
+                    
+                </footer>
+            </article>
+        </div>
+        <script>
+            var classId = new Vue({
+                el: '#classesId',
+                data: {
+                    list: []
+                },
+                created() {
+                    this.getData();
+                },
+                methods: {
+                    getData() {
+                        this.$http
+                            .get(
+                                'http://yapi.demo.qunar.com/mock/2516/bili/navList'
+                            )
+                            .then(result => {
+                                var result = result.body;
+                                if (result.code == 0) {
+                                    this.list = result.data.navList;
+                                } else {
+                                    alert('获取数据失败了');
+                                }
+                            });
+                    }
+                }
+            });
+            var mainContent = new Vue({
+                el: '#mainContent',
+                data: {
+                    weiboLists: []
+                },
+                created() {
+                    this.getWeiboList();
+                },
+                methods: {
+                    getWeiboList() {
+                        this.$http
+                            .get(
+                                'http://yapi.demo.qunar.com/mock/2516/bili/weibo'
+                            )
+                            .then(result => {
+                                var result = result.body;
+                                if(result.error_code == 0){
+                                    this.weiboLists = result.result.data;
+
+                                }else{
+                                    alert("获取资源失败")
+                                }
+                            });
+                    }
+                }
+            });
+            var resou = new Vue({
+                el:"#reSou",
+                data:{
+                    resou:""
+                },
+                created(){
+                    this.getReSou();
+                },
+                methods:{
+                    getReSou(){
+                        this.$http
+                        .get(
+                            "http://yapi.demo.qunar.com/mock/2516/bili/resou"
+                        )
+                        .then(result => {
+                            var result = result.body;
+                            if(result.error_code == 0){
+                                this.resou = "大家都在搜： " + result.result[0];
+                            }else{
+                                alert("未能获得热搜资源")
+                            }
+                        })
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
