@@ -21,6 +21,7 @@
                     <img src="../images/touxiang.png" alt="主页" />
                 </div>
                 <div id="reSou">
+                    <img src="../images/sousuo.png" alt="" />
                     <input type="text" :placeholder="resou" />
                 </div>
                 <div>
@@ -38,7 +39,7 @@
         </header>
 
         <div class="mainContents" id="mainContent">
-            <article v-for = "(item,index) of weiboLists" :key = "index">
+            <article v-for="(item,index) of weiboLists" :key="index">
                 <header>
                     <img src="../images/touxiang.jpg" alt="头像" />
                     <div>
@@ -51,9 +52,33 @@
                 <p>{{item.title}}</p>
                 <div class="photos">
                     <img :src="item.thumbnail_pic_s" alt="微博图片" />
+                    <img
+                        v-if="item.thumbnail_pic_s02 != null"
+                        :src="item.thumbnail_pic_s02"
+                        alt="微博图片"
+                    />
+                    <img
+                        v-if="item.thumbnail_pic_s03 != null"
+                        :src="item.thumbnail_pic_s03"
+                        alt="微博图片"
+                    />
                 </div>
                 <footer>
-                    
+                    <div class="zhuanfa">
+                        <img src="../images/zhuanfa.png" alt="转发" />
+                        <div>11.6万</div>
+                    </div>
+                    <div class="pinglun">
+                        <img src="../images/pinglun.png" alt="评论" />
+                        <div>2.3万</div>
+                    </div>
+                    <div class="dianzan">
+                        <img src="../images/dianzan.png" alt="点赞" />
+                        <div>56万</div>
+                    </div>
+                    <div class=" more">
+                        <img src="../images/more.png" alt="more" />
+                    </div>
                 </footer>
             </article>
         </div>
@@ -99,41 +124,41 @@
                             )
                             .then(result => {
                                 var result = result.body;
-                                if(result.error_code == 0){
+                                if (result.error_code == 0) {
                                     this.weiboLists = result.result.data;
-
-                                }else{
-                                    alert("获取资源失败")
+                                } else {
+                                    alert('获取资源失败');
                                 }
                             });
                     }
                 }
             });
             var resou = new Vue({
-                el:"#reSou",
-                data:{
-                    resou:""
+                el: '#reSou',
+                data: {
+                    resou: ''
                 },
-                created(){
+                created() {
                     this.getReSou();
                 },
-                methods:{
-                    getReSou(){
+                methods: {
+                    getReSou() {
                         this.$http
-                        .get(
-                            "http://yapi.demo.qunar.com/mock/2516/bili/resou"
-                        )
-                        .then(result => {
-                            var result = result.body;
-                            if(result.error_code == 0){
-                                this.resou = "大家都在搜： " + result.result[0];
-                            }else{
-                                alert("未能获得热搜资源")
-                            }
-                        })
+                            .get(
+                                'http://yapi.demo.qunar.com/mock/2516/bili/resou'
+                            )
+                            .then(result => {
+                                var result = result.body;
+                                if (result.error_code == 0) {
+                                    this.resou =
+                                        '大家都在搜： ' + result.result[0];
+                                } else {
+                                    alert('未能获得热搜资源');
+                                }
+                            });
                     }
                 }
-            })
+            });
         </script>
     </body>
 </html>
