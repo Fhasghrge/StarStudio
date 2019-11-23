@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
-    <title>邮件登录</title>
-</head>
-<body>
-    <div class="qqimage"></div>
-    <div class="wrapper">
-        <input type="text" placeholder="QQ号码/手机/邮箱" id="email_input">
-        <input type="text" placeholder="请输入您的QQ密码" id="passwordl_input">
-        <ul id="email_input_select"></ul>
-        <button>登录</button>
-        <div class="footer"> 
-            <div>忘了密码</div>
-            <div id="forget">注册新账号</div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="index.css" />
+        <title>邮件登录</title>
+    </head>
+    <body>
+        <div class="qqimage"></div>
+        <div class="wrapper">
+            <input
+                type="text"
+                placeholder="QQ号码/手机/邮箱"
+                id="email_input"
+            />
+            <ul id="email-sug-wrapper" class="email-sug"></ul>
+            <input
+                type="password"
+                placeholder="请输入您的QQ密码"
+                id="passwordl_input"
+            />
+            <button>登录</button>
+
+            <div class="footer">
+                <div>忘了密码</div>
+                <div id="forget">注册新账号</div>
+            </div>
         </div>
-    </div>
-</body>
+        <script src="index.js"></script>
+    </body>
 </html>
