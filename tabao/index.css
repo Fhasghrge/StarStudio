@@ -1,0 +1,179 @@
+.logo{
+    width: 6vw;
+}
+body{
+    background-color: rgb(245, 245, 245);
+}
+#header{
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+}
+#title{
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+#good_num{
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+}
+#manage button{
+    background-color: transparent;
+    border: none;
+    position: relative;
+    top: 20%;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.good_ifo header{
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    margin-left: 1vw;
+    margin-top: 3vh;
+}
+.dianpu a{
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-column-gap:1vw;
+    justify-content: start;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.dianpu a p{
+    margin: 0;
+}
+.daohang{
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    border-top: 1px solid #DDD;
+    background-color: white;
+}
+.daohang nav ul{
+    display: grid;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 8vw;
+
+    list-style: none;
+}
+.daohang li{
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+.daohang li img{
+    width: 8vw;
+    margin: 0 auto;
+}
+.daohang li .tip{
+    text-align: center;
+    font-size: 0.5em;
+}
+.good_main_main img{
+    width: 20vw;
+    height: 20vw;
+}
+.warnning{
+    background-color: red;
+    width: 5.4em;
+    border-radius: 1vw;
+    font-size: .5em;
+    color: white;
+    text-align: center;
+    padding: 0.2vh;
+    letter-spacing: .2vw;
+}
+.num img{
+    width: 4vw;
+    height: 4vw;
+}
+.num div{
+    font-size: .9em;
+    text-align: center;
+    line-height: .9em;
+    border-right: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+}
+.num{
+    display: grid;
+    grid-template-columns: 4vw 8vw 4vw;
+    border: 1px solid #DDD;
+    width: 16vw;
+    padding:0;
+    height: 4vw;
+}
+.shangping_huodong_shuoming{
+    font-weight: bold;
+    font-size: .7em;
+}
+.shangping_huodong_shuoming p{
+    display: inline;
+
+}
+.shangping_huodong_tap{
+    border: 1px solid rgb(199, 120, 16);
+    width: 5em;
+    font-size: .6em;
+    letter-spacing: .2vw;
+    text-align: center;
+    border-radius: .7vw;
+    color:rgb(199, 120, 16);
+}
+.coudan{
+    display: grid;
+    grid-template-columns: 2.4em 1vw;
+    width: 3.4em;
+}
+.coudan img{
+    width: 4vw;
+}
+.coudan p{
+    margin: 0;
+    font-size: .7em;
+    color: rgb(226, 102, 30);
+}
+.good_ifo_main{
+    margin-top: 2vh;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+}
+.good_ifo_main .xuanze{
+    padding-top: 50%;
+}
+.good_main_main{
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+}
+.main_ifo p{
+    margin: 0;
+    font-size: .8em;
+}
+select{
+    font-size: .6em;
+    border: none;
+    background-color: rgb(243, 243, 243);
+}
+.warnning{
+    margin-top: 1vh;
+}
+.jiage_and_num{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1vh;
+    grid-column-gap:20vw;
+}
+.baoyou{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+.baoyou .shangping_huodong_shuoming{
+    padding-left: 2vw;
+}
+article{
+    background-color: white;
+    border-radius: 2vw;
+    margin-top: 1.4vh;
+    padding: 0.1vw 1vw;
+}

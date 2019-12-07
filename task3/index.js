@@ -1,6 +1,6 @@
 var mainInput = document.getElementById('email_input');
 
-mainInput.addEventListener('input', function (event) {
+mainInput.addEventListener('input', function(event) {
     //获取输入框中的内容
     let value = event.target.value;
     //检测是否输入恶意
@@ -19,15 +19,15 @@ mainInput.addEventListener('input', function (event) {
     //重置
     ul_sets.innerHTML = '';
     //为每个提示添加
-    let value2 = value;//副本
+    let value2 = value; //副本
     for (let i = 0; i < email_ends.length; i++) {
         value = value2;
-        let at_pos = value.indexOf("@");
+        let at_pos = value.indexOf('@');
         //已经输入@
         if (at_pos != -1) {
-            let value_end = value.substring(at_pos + 1)
+            let value_end = value.substring(at_pos + 1);
             if (email_ends[i].startsWith(value_end)) {
-                value = value.substring(0, at_pos)
+                value = value.substring(0, at_pos);
             } else {
                 continue;
             }
@@ -44,11 +44,32 @@ mainInput.addEventListener('input', function (event) {
         ul_sets.appendChild(ul_child);
     }
     //对于每个提示设置监听函数，自动填充
-    let li_list = document.getElementsByTagName("li");
-    for(let i = 0; i < li_list.length; i++){
-        li_list[i].addEventListener("click",function(event){
-            ul_sets.style.display = "none";
+    let li_list = document.getElementsByTagName('li');
+    for (let li_node of li_list) {//let in 遍历的是对象
+        li_node.addEventListener('click', function(event) {
+            ul_sets.style.display = 'none';
             mainInput.value = event.target.innerHTML;
-        })
+        });
     }
 });
+
+function addLoadEvent(func){
+    let load_past = window.onload;//保存以前的函数
+    if(typeof window.onload != 'function'){
+        window.onload = func;//如果以前没有就直接执行
+    }else{
+        window.onload = function(){
+            load_past();//如果以前就有，需要添加副本
+            func();
+        }
+    }
+}
+function change_color(){
+    let li_list = document.getElementsByTagName('li');
+    for (let li_node of li_list) {//let in 遍历的是对象
+        li_node.onmouseover = function(){
+            console.log("???");
+        }
+    }
+    console.log("123");
+}
