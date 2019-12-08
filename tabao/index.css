@@ -1,6 +1,9 @@
 .logo{
     width: 6vw;
 }
+.logo_p{
+    width: 6vw;
+}
 body{
     background-color: rgb(245, 245, 245);
 }
@@ -44,8 +47,8 @@ body{
     margin: 0;
 }
 .daohang{
-    position: fixed;
-    bottom: 0;
+    /* position: fixed; */
+    /* bottom: 0; */
     margin: 0;
     border-top: 1px solid #DDD;
     background-color: white;
@@ -54,7 +57,7 @@ body{
     display: grid;
     margin: 0;
     padding: 0;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: auto 1fr 1fr 1fr auto;
     grid-column-gap: 8vw;
 
     list-style: none;
@@ -62,6 +65,7 @@ body{
 .daohang li{
     display: grid;
     grid-template-rows: 1fr auto;
+    margin: 0 2.1vw;
 }
 .daohang li img{
     width: 8vw;
@@ -176,4 +180,48 @@ article{
     border-radius: 2vw;
     margin-top: 1.4vh;
     padding: 0.1vw 1vw;
+}
+.jiesuan img{
+    width: 5vw;
+}
+#quanxuan{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+#quanxuan p{
+    font-size: .8em;
+    margin: 0;
+}
+#heji{
+    font-size: .9em;
+}
+#heji p{
+    color:rgb(226, 102, 30);
+    display: inline;
+    font-size: .8em;
+}
+.jiesuan button{
+    background-color: rgb(226, 102, 30);
+    width: 6em;
+    height: 2.5em;
+    border: none;
+    border-radius: 5vw;
+    color: white;
+}
+.jiesuan{
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    align-items: center;
+    background-color: white;
+    /* position: fixed; */
+    /* bottom: 7vh; */
+    padding: 1vw;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+body > footer{
+    position: fixed;
+    bottom: 0;
 }
